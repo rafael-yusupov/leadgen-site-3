@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Реклама для учебных центров — ученики, которые платят</title>
+<meta name="description" content="Реклама в Instagram и Facebook для учебных центров. Считаем деньги в кассе, а не заявки.">
+<meta name="theme-color" content="#060707">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060707;--text:#F4F5F6;--mute:#8B9099;--soft:#B9BDC4;--line:rgba(255,255,255,.09);--card:rgba(255,255,255,.035);--acc:#8EF0C0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+body{background:var(--bg);color:var(--text);font:400 17px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:0 0 76px;position:relative}
+h1,h2,h3,.num{font-family:"Inter Tight",Inter,sans-serif;font-weight:600;letter-spacing:-.035em;line-height:1.02}
+h1{font-size:clamp(34px,8.4vw,88px)}
+h2{font-size:clamp(28px,6vw,60px);margin-bottom:16px;text-wrap:balance}
+h3{font-size:21px;letter-spacing:-.02em;line-height:1.2}
+.dim{color:#6E737B}
+.acc{color:var(--acc)}
+.lead{font-size:clamp(17px,2.1vw,20px);color:var(--soft);max-width:580px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+.kicker{font:500 13px/1 Inter,sans-serif;color:var(--mute);margin-bottom:18px;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#0A0B0C;font:600 16px/1 Inter,sans-serif;padding:18px 28px;border-radius:100px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:scale(1.03);box-shadow:0 0 0 6px rgba(255,255,255,.08)}
+.btn.line{background:transparent;color:var(--text);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+.note{font-size:13px;color:var(--mute);margin-top:18px}
+.tagx{font:500 11px/1 Inter,sans-serif;color:var(--mute);border:1px solid var(--line);border-radius:100px;padding:6px 10px;white-space:nowrap}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;overflow:hidden;--x:50%;--y:50%}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--x) var(--y),rgba(255,255,255,.07),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.card:hover:before{opacity:1}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease-out,transform .55s ease-out}
+.rv.in{opacity:1;transform:none}
+
+/* шапка */
+nav{position:sticky;top:0;z-index:20;background:rgba(6,7,7,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.sc{border-color:var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;height:60px}
+.logo{font:600 15px/1 "Inter Tight",sans-serif;letter-spacing:-.01em;white-space:nowrap}
+.logo span{color:var(--mute);font-weight:500}
+nav a{font:500 14px/1 Inter,sans-serif;color:var(--text);text-decoration:none;background:rgba(255,255,255,.08);border-radius:100px;padding:10px 16px;white-space:nowrap;transition:background .2s}
+nav a:hover{background:rgba(255,255,255,.16)}
+
+/* первый экран */
+.hero{padding:44px 0 76px;position:relative}
+.glow{position:absolute;left:50%;top:-240px;width:900px;height:620px;z-index:0;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(142,240,192,.16),transparent),radial-gradient(closest-side at 70% 40%,rgba(110,150,255,.12),transparent);filter:blur(30px);animation:drift 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translateX(-46%) translateY(30px) scale(1.08)}}
+.pill{display:inline-flex;align-items:center;gap:10px;font:500 13px/1 Inter,sans-serif;color:var(--soft);border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:100px;padding:9px 14px;margin-bottom:26px}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 rgba(142,240,192,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 10px rgba(142,240,192,0)}}
+.hero h1 span{display:block;opacity:0;transform:translateY(18px);animation:hin .8s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 span+span{animation-delay:.15s}
+@keyframes hin{to{opacity:1;transform:none;filter:none}}
+.hero .lead{margin:26px auto 32px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.late{opacity:0;transform:translateY(12px);animation:hin .7s .3s ease-out forwards}
+
+/* витрина-сравнение */
+.card.board{margin-top:56px;padding:0;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+.board .hd{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line);font-size:14px;color:var(--soft)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr)}
+.cell{padding:24px;border-right:1px solid var(--line)}
+.cell:last-child{border-right:0}
+.cell small{display:block;font-size:13px;color:var(--mute);margin-bottom:16px}
+.cell .was{font-size:14px;color:#6E737B;display:flex;justify-content:space-between;gap:8px;white-space:nowrap}
+.cell .now{font:600 clamp(24px,6.6vw,44px)/1 "Inter Tight",sans-serif;letter-spacing:-.03em;margin-top:14px;white-space:nowrap}
+.cell .ln{height:3px;border-radius:3px;background:rgba(255,255,255,.08);margin-top:8px;overflow:hidden}
+.cell .ln u{display:block;height:100%;width:0;border-radius:3px;background:#5B6068;transition:width 1.5s cubic-bezier(.2,.8,.2,1)}
+.cell .ln.a u{background:var(--acc)}
+.cell.hl .now{color:var(--acc)}
+.board .ft{padding:18px 24px;border-top:1px solid var(--line);font-size:15px;color:var(--soft)}
+
+/* цифры */
+.bento3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.big{font:600 clamp(30px,3.9vw,46px)/1 "Inter Tight",sans-serif;letter-spacing:-.04em;white-space:nowrap}
+.bento3 p{font-size:14px;color:var(--mute);margin-top:10px}
+
+/* манифест */
+.manifest{font:600 clamp(28px,5.2vw,56px)/1.12 "Inter Tight",sans-serif;letter-spacing:-.035em;max-width:980px;margin:0 auto}
+.manifest .w{color:#2A2D31;transition:color .5s}
+.manifest .w.on{color:var(--text)}
+.manifest .w.g.on{color:var(--acc)}
+
+/* точки */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,1.6vw,8px);margin:22px 0 20px}
+.dots i{aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.08);transition:background .4s,box-shadow .4s,transform .4s}
+.dots i.on{background:#7D828A;transform:scale(1.08)}
+.win .dots i.on{background:var(--acc);box-shadow:0 0 18px rgba(142,240,192,.55)}
+.two .card{display:flex;flex-direction:column}
+.two .top span{display:block;font-size:13px;color:var(--mute);margin-bottom:8px}
+.two .res{color:var(--soft);font-size:15px;margin-top:auto}
+.two .res b{display:block;font:600 40px/1 "Inter Tight",sans-serif;letter-spacing:-.04em;color:var(--text);white-space:nowrap;margin-bottom:8px}
+.two .win{border-color:rgba(142,240,192,.35)}.two .win .res b{color:var(--acc)}
+
+/* метод */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.steps .card{display:flex;flex-direction:column}
+.steps .n{font:500 13px/1 Inter,sans-serif;color:var(--mute);display:block;margin-bottom:44px}
+.steps p{font-size:15px;color:var(--mute);margin-top:8px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.roles ul{list-style:none;margin-top:14px}
+.roles li{display:grid;grid-template-columns:24px 1fr;padding:11px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.5;color:var(--soft)}
+.roles li:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);margin-top:8px}
+
+/* отчёт */
+.rep{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.report .who{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;font-size:14px;color:var(--soft)}
+.report .r{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);color:var(--soft);opacity:0;transform:translateY(10px);transition:.6s}
+.report.in .r{opacity:1;transform:none}
+.report .r b{font:600 20px/1 "Inter Tight",sans-serif;color:var(--text)}
+.report .r.sum b{font-size:40px;letter-spacing:-.04em;color:var(--acc)}
+.report .best{margin-top:6px;background:rgba(255,255,255,.05);border-radius:14px;padding:14px;font-size:14px;color:var(--soft)}
+
+/* видео */
+.video{position:relative;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#000;margin-top:34px;border:1px solid var(--line);box-shadow:0 40px 120px -40px rgba(142,240,192,.25)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* история */
+.acts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.acts small{font-size:13px;color:var(--mute)}
+.acts p{font:600 clamp(20px,2.4vw,24px)/1.2 "Inter Tight",sans-serif;letter-spacing:-.02em;margin-top:44px}
+.acts .fin{background:#fff;color:#0A0B0C;border-color:#fff}
+.acts .fin small{color:#5d6168}
+
+/* кейсы, команда, условия */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.case{border:1px dashed rgba(255,255,255,.18);border-radius:24px;padding:22px;color:var(--mute);font-size:14px}
+.case .shot{aspect-ratio:16/10;border-radius:14px;background:rgba(255,255,255,.04);display:grid;place-items:center;margin:14px 0;font-size:12px}
+.case b{display:block;font:600 32px/1 "Inter Tight",sans-serif;letter-spacing:-.03em;color:var(--text)}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.team .card{display:flex;gap:18px;align-items:center}
+.team i{flex:none;width:88px;height:88px;border-radius:50%;border:1px dashed rgba(255,255,255,.22);display:grid;place-items:center;font-style:normal;font-size:12px;color:var(--mute)}
+.team p{font-size:14px;color:var(--mute);margin-top:6px}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.fit ul{list-style:none;margin-top:14px}
+.fit li{display:grid;grid-template-columns:24px 1fr;padding:11px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.5;color:var(--soft)}
+.fit li:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);margin-top:8px}
+.fit .no li{color:var(--mute)}.fit .no li:before{background:#3A3E44}
+
+/* кейсы с цифрами */
+.feat{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;margin-top:34px;align-items:end}
+.meta{font-size:13px;color:var(--mute);display:block;margin-bottom:8px}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;margin:20px 0 16px}
+.kp div small{display:block;font-size:12px;color:var(--mute);margin-bottom:6px}
+.kp div b{display:block;font:600 24px/1 "Inter Tight",sans-serif;letter-spacing:-.03em;white-space:nowrap}
+.kp .w{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px}
+.kp .w b{font-size:32px;color:var(--acc)}
+.kp .w em{font-style:normal;font-size:13px;color:var(--mute);display:block;margin-top:6px}
+.feat .kp .w b{font-size:clamp(34px,5vw,52px)}
+.cs{display:flex;flex-direction:column}
+.cs p,.feat p{font-size:14px;color:var(--mute)}
+.cs img{display:block;width:100%;border-radius:12px;margin-top:auto;opacity:.92}
+.cs p+img{margin-top:16px}
+.chart{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;align-items:end;height:200px}
+.chart div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.chart i{display:block;width:100%;border-radius:5px 5px 0 0;background:var(--acc);height:0;transition:height 1.2s cubic-bezier(.2,.8,.2,1)}
+.chart u{position:absolute;left:25%;right:25%;bottom:0;border-radius:3px 3px 0 0;background:#0A0B0C;opacity:.55;height:0;transition:height 1.2s cubic-bezier(.2,.8,.2,1)}
+.mon{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:8px;font-size:10px;color:var(--mute);text-align:center}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--mute);margin-bottom:14px}
+.legend span:before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--acc);margin-right:6px}
+.legend span+span:before{background:#3d5a4d}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+
+/* лента с прокруткой */
+.snap{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:34px -20px 0;padding:0 20px;scroll-padding:0 20px}
+.snap::-webkit-scrollbar{display:none}
+.snap>*{flex:0 0 min(78vw,300px);scroll-snap-align:start}
+.rw{padding:14px}
+.rw .yt,.rw iframe{display:block;width:100%;aspect-ratio:1;border-radius:14px;background:#000;border:0;padding:0}
+.rw .yt{position:relative;overflow:hidden;cursor:pointer}
+.rw .yt[hidden]{display:none}
+.rw .yt img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.rw .yt:hover img{transform:scale(1.03)}
+.rw .pl{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.rw .pl svg{display:block;width:26px;height:26px;fill:#060707}
+.rw h3{font-size:19px;margin-top:16px}
+.rw small{display:block;font-size:13px;color:var(--mute);margin-top:4px}
+.rw p{font-size:15px;color:var(--soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.rw>*:not(.yt):not(iframe){padding-left:8px;padding-right:8px}
+.rw p{margin-left:8px;margin-right:8px;padding-left:0!important;padding-right:0!important;padding-bottom:8px}
+.hrow{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.arrows{display:flex;gap:8px;flex:none;margin-bottom:18px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.arrows button:hover{background:rgba(255,255,255,.12)}
+.arrows svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){
+  .feat{grid-template-columns:1fr;gap:24px}
+  .cgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:14px -20px 0;padding:0 20px;scroll-padding:0 20px}
+  .cgrid::-webkit-scrollbar{display:none}
+  .cgrid>*{flex:0 0 min(82vw,330px);scroll-snap-align:start}
+  .cgrid{align-items:flex-start}
+  .chart{height:150px;gap:4px}.mon{gap:4px}
+}
+@media(max-width:560px){.arrows{display:none}.hrow{display:block}}
+@media(max-width:350px){.snap,.cgrid{margin-left:-16px;margin-right:-16px;padding:0 16px;scroll-padding:0 16px}}
+
+/* кейсы Рафаэля: кнопка скриншотов, свёрнутая сетка, окно просмотра */
+.shot{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:100px;color:var(--text);font:500 13px/1 Inter,sans-serif;padding:10px 14px;cursor:pointer;transition:background .2s}
+.shot:hover{background:rgba(255,255,255,.14)}
+.shot svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.morewrap{text-align:center;margin-top:22px}
+@media(min-width:901px){.cgrid.fold>*:nth-child(n+7){display:none}}
+@media(max-width:900px){.morewrap{display:none}}
+dialog{border:1px solid var(--line);background:#0E0F10;color:var(--text);border-radius:20px;padding:18px;width:min(94vw,980px);max-height:88vh;overflow:auto;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.74);backdrop-filter:blur(4px)}
+.lbh{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.lbh button{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);cursor:pointer;display:grid;place-items:center}
+.lbh svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.lbin img{display:block;width:100%;border-radius:10px;margin-top:12px}
+.lbin img.pf{max-width:520px}
+
+/* единая сетка карточек кейсов */
+.cs .meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs h3{min-height:2.4em}
+.cs .kp{margin:16px 0}
+.cs .kp div small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs .kp .w em{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cs p{flex:1;margin-bottom:18px}
+.cs .shot{margin-top:0}
+.shot svg,.arrows svg,.lbh svg{display:block;flex:none}
+.shot span{line-height:1}
+.kp b,.cell .now,.cell .was,.big,.report b,.two .res b,.chart+.mon{font-variant-numeric:tabular-nums}
+.tagx{display:inline-flex;align-items:center;line-height:1}
+.pill i{flex:none}
+@media(max-width:900px){.cgrid{align-items:stretch!important}}
+
+/* команда: фото и ссылки */
+.team .card{align-items:center}
+.team img{flex:none;width:88px;height:88px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+.soc{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.soc a{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px;border-radius:100px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);font:500 13px/1 Inter,sans-serif;text-decoration:none;white-space:nowrap;transition:background .2s}
+.soc a:hover{background:rgba(255,255,255,.14)}
+.soc svg{display:block;flex:none;width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fl{display:flex;flex-wrap:wrap;gap:22px 48px}
+.fl b{font-weight:600;color:var(--text);font-size:14px}
+.fl .soc{margin-top:10px}
+@media(max-width:900px){.team img{width:68px;height:68px}}
+
+/* заявка */
+.start{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.start ol{list-style:none;counter-reset:a;margin-top:24px}
+.start ol li{counter-increment:a;display:grid;grid-template-columns:40px 1fr;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);color:var(--soft)}
+.start ol li:before{content:"0" counter(a);font:500 13px/1 Inter,sans-serif;color:var(--mute)}
+form{min-height:440px}
+.prog{display:flex;gap:6px;margin-bottom:26px}
+.prog i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.1);transition:background .4s}
+.prog i.on{background:var(--acc)}
+.qs{display:none}.qs.on{display:block;animation:fin .5s cubic-bezier(.2,.7,.2,1)}
+@keyframes fin{from{opacity:0;transform:translateY(14px)}}
+.qs h3{font-size:26px;margin-bottom:18px}
+.opt{display:block;width:100%;text-align:left;background:rgba(255,255,255,.04);border:1px solid transparent;border-radius:16px;color:var(--text);font:500 16px Inter,sans-serif;padding:17px 18px;margin-top:8px;cursor:pointer;transition:.2s}
+.opt:hover,.opt.sel{background:rgba(142,240,192,.1);border-color:rgba(142,240,192,.5)}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pick .opt{text-align:center;margin-top:0}
+form input{width:100%;background:rgba(255,255,255,.04);border:1px solid transparent;border-radius:16px;color:var(--text);font:500 16px Inter,sans-serif;padding:17px 18px;margin-top:8px}
+form input::placeholder{color:#6E737B}
+form input:focus{outline:0;border-color:rgba(142,240,192,.6);background:rgba(255,255,255,.06)}
+form .btn{width:100%;margin-top:16px}
+.back{background:none;border:0;color:var(--mute);font:500 14px Inter,sans-serif;margin-top:16px;cursor:pointer}
+#msg{font-size:14px;color:var(--acc);margin-top:12px}
+
+.faq{max-width:820px;margin:0 auto}
+details{border-top:1px solid var(--line);padding:22px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{font:600 clamp(18px,2.4vw,22px)/1.25 "Inter Tight",sans-serif;letter-spacing:-.02em;cursor:pointer;list-style:none;padding-right:44px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"";position:absolute;right:6px;top:.35em;width:10px;height:10px;border-right:2px solid var(--mute);border-bottom:2px solid var(--mute);transform:rotate(45deg);transition:transform .3s}
+details[open] summary:after{transform:rotate(-135deg) translate(-4px,-4px)}
+details p{color:var(--mute);margin-top:12px}
+footer{padding:34px 0;font-size:13px;color:#5d6168;border-top:1px solid var(--line)}
+
+@media(min-width:901px){section{padding:0 0 136px}.hero{padding:88px 0 136px}}
+@media(max-width:900px){
+  .rep,.start,.cases,.acts,.two,.roles,.team,.fit,.bento3{grid-template-columns:1fr}
+  .rep,.start{gap:30px}
+  .grid4{grid-template-columns:1fr 1fr}
+  .cell:nth-child(2){border-right:0}.cell:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:1fr 1fr}.steps .n{margin-bottom:28px}
+  .acts p{margin-top:22px}
+  .logo span{display:none}
+  .glow{width:560px;height:480px}
+}
+@media(max-width:560px){
+  .steps{grid-template-columns:1fr}.steps .n{margin-bottom:18px}
+  .cta{flex-direction:column}.cta .btn{width:100%}
+  .cell{padding:18px 16px}.card{padding:22px;border-radius:20px}.card.board{padding:0;border-radius:22px}.board .hd,.board .ft{padding:16px}
+  .two .res b{font-size:36px}
+  .team .card{gap:14px}.team i{width:68px;height:68px}
+  .qs h3{font-size:22px}
+  nav a{padding:9px 13px;font-size:13px}
+  .video{border-radius:18px}
+  .lead{font-size:16px}
+}
+@media(max-width:350px){.wrap{padding:0 16px}.logo{font-size:14px}.pick{grid-template-columns:1fr}.cell .was span:first-child{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.late,.hero h1 span,.report .r{opacity:1;transform:none;filter:none}.manifest .w{color:var(--text)}}
+
+/* ---- форма заявки: мятная карточка */
+form.card{background:var(--acc);color:#07110c;border:0;box-shadow:0 30px 80px -30px rgba(142,240,192,.55)}
+form.card:before{display:none}
+.fhead{display:flex;justify-content:space-between;align-items:center;gap:10px;font:700 12px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.fhead b{background:#07110c;color:var(--acc);padding:8px 10px;border-radius:8px;white-space:nowrap}
+.fhead span{color:#1d4a35;white-space:nowrap}
+.fsub{font-size:15px;line-height:1.4;color:#12301f;margin:14px 0 16px}
+form .prog i{background:rgba(0,0,0,.15)}form .prog i.on{background:#07110c}
+form .qs h3{color:#07110c}
+form .opt{background:#07110c;border-color:#07110c;color:#fff}
+form .opt:hover{background:#17251e;border-color:#07110c}
+form .opt.sel{background:#07110c;border-color:#07110c;box-shadow:inset 0 0 0 2px #fff}
+form input{background:#fff;border-color:#07110c;color:#07110c}
+form input::placeholder{color:#6b7a72}
+form input:focus{background:#fff;border-color:#07110c;outline:2px solid #07110c;outline-offset:1px}
+form .btn{background:#07110c;color:var(--acc)}
+form .back{color:#1d4a35}
+form #msg{color:#07110c}
+form .qs h3.acc{color:#07110c}
+form .qs p[style]{color:#12301f!important}
+
+/* ---- кейсы: своя полоса фона, лента с логотипами */
+#cases{background:#0d1110;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(64px,9vw,104px) 0;margin-bottom:clamp(72px,10vw,136px)}
+.crow{margin-top:48px;align-items:center}
+.crow h3{font-size:26px}
+.swipe{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--mute);margin-top:6px}
+.swipe svg{flex:none;width:18px;height:18px;fill:none;stroke:var(--acc);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.2s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateX(6px)}}
+#cases .arrows{display:flex;margin-bottom:0}
+#cases .arrows button{width:48px;height:48px;background:var(--acc);border-color:var(--acc);color:#07110c}
+#cases .arrows button:hover{background:#fff;border-color:#fff}
+#cases .arrows button:disabled{background:transparent;border-color:var(--line);color:#565b63;cursor:default}
+#cases .arrows svg{width:18px;height:18px}
+#cases .cgrid{display:flex;grid-template-columns:none;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:20px -20px 0;padding:0 20px 6px;scroll-padding:0 20px;align-items:stretch!important}
+#cases .cgrid::-webkit-scrollbar{display:none}
+#cases .cgrid>*{display:flex;flex:0 0 min(80vw,340px);scroll-snap-align:start}
+#cases .cs{background:#060707;border:1px solid rgba(255,255,255,.14);opacity:1;transform:none;filter:none}
+.ch{display:flex;align-items:center;gap:12px;min-height:60px;margin-bottom:6px}
+.ch>div{min-width:0}
+.ch .meta{margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#cases .ch h3{min-height:0;font-size:20px;line-height:1.2}
+.lg{flex:none;width:54px;height:54px;border-radius:50%;object-fit:cover;background:#fff;border:2px solid rgba(255,255,255,.22)}
+#cases .cs img.lg{width:54px;margin:0;border-radius:50%;opacity:1}
+.lg.mono{display:grid;place-items:center;background:rgba(142,240,192,.1);border-color:rgba(142,240,192,.35);color:var(--acc);font:700 20px/1 "Inter Tight",Inter,sans-serif}
+.lg.mono.s{font-size:12px;letter-spacing:.04em}
+.ctrack{height:4px;background:rgba(255,255,255,.1);border-radius:4px;margin-top:24px;overflow:hidden}
+.ctrack i{display:block;height:100%;width:20%;background:var(--acc);border-radius:4px}
+@media(max-width:560px){#cases .hrow.crow{display:flex}.crow h3{font-size:22px}#cases .arrows button{width:44px;height:44px}#cases .cgrid{gap:14px}}
+@media(max-width:350px){#cases .cgrid{margin-left:-16px;margin-right:-16px;padding:0 16px 6px;scroll-padding:0 16px}}
+.quiz>*,.start>*{min-width:0}.fhead{flex-wrap:wrap}
+.ch h3{overflow-wrap:anywhere}
+@media(max-width:350px){#cases .ch h3{font-size:18px}#cases .kp>div:not(.w) b{font-size:21px}}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <div class="logo">Рафаэль и Рустам <span>· реклама для учебных центров</span></div>
+  <a href="#start" data-tg>Обсудить проект</a>
+</div></nav>
+
+<!-- ПЕРВЫЙ ЭКРАН -->
+<header class="hero">
+  <div class="glow"></div>
+  <div class="wrap center" style="position:relative">
+    <div class="pill late"><i></i>Реклама для учебных центров</div>
+    <h1><span class="dim">Не заявки.</span><span>Ученики, которые платят.</span></h1>
+    <p class="lead late">Реклама в Instagram и Facebook для учебных центров. Считаем деньги в вашей кассе и каждый день показываем их цифрами.</p>
+    <div class="cta late">
+      <a href="#start" class="btn">Обсудить проект</a>
+      <a href="#video" class="btn line">Смотреть видео</a>
+    </div>
+    <p class="note late">Первая встреча бесплатна · для центров с рекламным бюджетом от $1 500 в месяц</p>
+
+    <div class="card board rv" id="board" style="text-align:left">
+      <div class="hd"><span>Один учебный центр. Один месяц.</span><span class="tagx">из проекта</span></div>
+      <div class="grid4">
+        <div class="cell"><small>Бюджет</small><div class="was"><span>было</span><span>$1 500</span></div><div class="ln"><u data-w="50"></u></div><div class="now">$3 000</div><div class="ln a"><u data-w="100"></u></div></div>
+        <div class="cell"><small>Заявки</small><div class="was"><span>было</span><span>2 880</span></div><div class="ln"><u data-w="100"></u></div><div class="now" data-n="1185">0</div><div class="ln a"><u data-w="41"></u></div></div>
+        <div class="cell hl"><small>Оплатили</small><div class="was"><span>было</span><span>20</span></div><div class="ln"><u data-w="20"></u></div><div class="now" data-n="98">0</div><div class="ln a"><u data-w="100"></u></div></div>
+        <div class="cell hl"><small>В кассе</small><div class="was"><span>было</span><span>$6 475</span></div><div class="ln"><u data-w="46"></u></div><div class="now" data-n="14000" data-p="$">$0</div><div class="ln a"><u data-w="100"></u></div></div>
+      </div>
+      <div class="ft">Заявок стало меньше. Учеников — почти в пять раз больше.</div>
+    </div>
+
+    <div class="bento3" style="text-align:left">
+      <div class="card rv"><div class="big"><span data-n="3000000" data-p="$">$0</span>+</div><p>вложили в рекламу клиентов за всё время</p></div>
+      <div class="card rv"><div class="big">до $5 000</div><p>в день на один проект, и заявки не становятся хуже</p></div>
+      <div class="card rv"><div class="big">10–20</div><p>новых роликов пишем каждому центру в месяц</p></div>
+    </div>
+  </div>
+</header>
+
+<!-- МАНИФЕСТ -->
+<section>
+  <div class="wrap">
+    <p class="manifest" id="manifest" data-acc="ученики,">Заявка за пятьдесят центов красиво выглядит только в отчёте таргетолога. Аренду, зарплаты и рост оплачивают ученики, которые дошли до кассы.</p>
+  </div>
+</section>
+
+<!-- ТОЧКИ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Почему так происходит</span>
+    <h2 class="rv">Важно, кто оставляет заявку</h2>
+    <p class="lead rv">Одна школа программирования, две рекламы. Сколько людей из десяти готовы учиться.</p>
+    <div class="two" id="two">
+      <div class="card">
+        <div class="top"><span>Заявка $2–3</span><h3>«Скидка, адрес, запишись»</h3></div>
+        <div class="dots" data-on="2"></div>
+        <div class="res"><b>2 из 10</b>оставили телефон из любопытства</div>
+      </div>
+      <div class="card win">
+        <div class="top"><span>Заявка $5–6</span><h3>Ролик на две минуты</h3></div>
+        <div class="dots" data-on="6"></div>
+        <div class="res"><b>6 из 10</b>понимают, куда идут, и ждут звонка</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- МЕТОД -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Как мы работаем</span>
+    <h2 class="rv">Четыре шага. <span class="dim">Каждый месяц.</span></h2>
+    <div class="steps">
+      <div class="card rv"><span class="n">01</span><h3>Изучаем ваших клиентов</h3><p>Говорим с родителями и учениками, слушаем звонки отдела продаж.</p></div>
+      <div class="card rv"><span class="n">02</span><h3>Пишем ролики</h3><p>10–20 сценариев в месяц с раскадровкой и ТЗ на съёмку.</p></div>
+      <div class="card rv"><span class="n">03</span><h3>Запускаем рекламу</h3><p>10–15 роликов одновременно. Один устал — работает следующий.</p></div>
+      <div class="card rv"><span class="n">04</span><h3>Считаем кассу</h3><p>Каждый день: заявки, пробные уроки, оплаты.</p></div>
+    </div>
+    <div class="roles">
+      <div class="card rv"><h3>Делаем мы</h3><ul><li>Сценарии, раскадровки и ТЗ на съёмку</li><li>Картинки для рекламы — сколько нужно</li><li>Запуск и ведение рекламы</li><li>Отчёт до оплаты</li></ul></div>
+      <div class="card rv"><h3>Делаете вы</h3><ul><li>Снимаете ролики на телефон по нашему ТЗ</li><li>Обрабатываете заявки</li><li>Показываете, кто оплатил</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЧЁТ -->
+<section style="padding-top:0">
+  <div class="wrap rep">
+    <div>
+      <span class="kicker">Прозрачность</span>
+      <h2 class="rv">Вы видите каждый доллар</h2>
+      <p class="lead rv">Сколько потратили, сколько человек оплатило, сколько пришло в кассу и какой ролик это сделал.</p>
+    </div>
+    <div class="card report" id="report">
+      <div class="who"><span>Итоги дня</span><span class="tagx">пример отчёта</span></div>
+      <div class="r" style="transition-delay:.1s"><span>Потратили</span><b>$100</b></div>
+      <div class="r" style="transition-delay:.3s"><span>Заявок</span><b>21</b></div>
+      <div class="r" style="transition-delay:.5s"><span>Записались на пробный</span><b>12</b></div>
+      <div class="r" style="transition-delay:.7s"><span>Оплатили</span><b>4</b></div>
+      <div class="r sum" style="transition-delay:1s"><span>В кассе</span><b>$560</b></div>
+      <div class="best">Лучший ролик дня: «Три года учит — и молчит?» — 3 оплаты.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ВИДЕО -->
+<section id="video" style="padding-top:0">
+  <div class="wrap center">
+    <span class="kicker">Видео</span>
+    <h2 class="rv">Экскурсия по системе</h2>
+    <div class="video rv">
+      <iframe src="https://kinescope.io/embed/vzmZ86ioGVpH9fbHCsqbjZ" title="Видео о нашем подходе" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ИСТОРИЯ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">История из практики</span>
+    <h2 class="rv">Нас поставили рядом <span class="dim">с другим таргетологом</span></h2>
+    <p class="lead rv">Центр подготовки к IELTS. Один сайт, одна цена, один отдел продаж. Две команды запускают рекламу одновременно.</p>
+    <div class="acts">
+      <div class="card rv"><small>Первые три дня</small><p>Владелец недоволен: «Ваши заявки дороже».</p></div>
+      <div class="card rv"><small>Пробные уроки</small><p>Наши заявки приходят на урок и оплачивают.</p></div>
+      <div class="card fin rv"><small>Итог</small><p>В три раза больше денег. Весь бюджет передали нам.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- КЕЙСЫ -->
+<section id="cases">
+  <div class="wrap">
+    <span class="kicker">Результаты</span>
+    <h2 class="rv">Проекты в цифрах</h2>
+    <p class="lead rv">Цифры взяты из рекламных кабинетов и отчётов по продажам. У большинства проектов можно открыть скриншоты.</p>
+    <div class="card feat rv" id="feat">
+      <div>
+        <span class="meta">Онлайн-школа · год работы</span>
+        <h3>Школа маркетплейсов</h3>
+        <div class="kp">
+          <div><small>Вложено</small><b>$198 434</b></div>
+          <div><small>Продаж</small><b>2 556</b></div>
+          <div class="w"><small>Выручка</small><b>$668 621</b><em>3,4× к рекламе</em></div>
+        </div>
+        <p>Год вели рекламу на запуски курсов. Продажи менеджеры отмечали в отчёте каждую неделю.</p>
+      </div>
+      <div>
+        <div class="legend"><span>Выручка за месяц</span><span>Расход на рекламу</span></div>
+        <div class="chart"><div><i data-h="0.9"></i><u data-h="0.8"></u></div><div><i data-h="100.0"></i><u data-h="22.6"></u></div><div><i data-h="81.2"></i><u data-h="26.6"></u></div><div><i data-h="66.7"></i><u data-h="22.3"></u></div><div><i data-h="87.6"></i><u data-h="25.0"></u></div><div><i data-h="45.5"></i><u data-h="20.0"></u></div><div><i data-h="90.9"></i><u data-h="26.1"></u></div><div><i data-h="47.7"></i><u data-h="20.7"></u></div><div><i data-h="33.0"></i><u data-h="4.4"></u></div><div><i data-h="32.2"></i><u data-h="5.1"></u></div></div>
+        <div class="mon"><span>Апр</span><span>Авг</span><span>Сен</span><span>Окт</span><span>Ноя</span><span>Дек</span><span>Янв</span><span>Фев</span><span>Мар</span><span>Апр</span></div>
+        <p style="margin-top:14px">Июнь и июль 2023 в график не включены: расход за эти месяцы в отчётах не сохранился.</p>
+      </div>
+    </div>
+    <div class="hrow crow">
+      <div>
+        <h3>Ещё проекты</h3>
+        <p class="swipe">Листайте вбок <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></p>
+      </div>
+      <div class="arrows" data-for="casegrid"><button type="button" data-dir="-1" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" data-dir="1" aria-label="Вперёд"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+    </div>
+    <div class="cgrid" id="casegrid">
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l07.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Тренинги для врачей</span><h3>Medion Academy</h3></div></div><div class="kp"><div><small>Вложено</small><b>$10 285</b></div><div><small>Заявок</small><b>4 685</b></div><div class="w"><small>Целевых заявок</small><b>65%</b><em>заявка по $2,2</em></div></div><p>Запуск сразу на 10 курсов.</p><button type="button" class="shot" data-imgs="i07.jpg,k07.jpg" data-t="Medion Academy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l09.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Обучение таргетологов</span><h3>Nelly Ads - School</h3></div></div><div class="kp"><div><small>Вложено</small><b>$7 729</b></div><div><small>Клиентов</small><b>65</b></div><div class="w"><small>Выручка</small><b>$39 320</b><em>окупаемость 508%</em></div></div><p>9 975 заявок по $0,77. Средний чек $600.</p><button type="button" class="shot" data-imgs="i09.jpg,k09.jpg" data-t="Nelly Ads - School"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l08.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Академия искусств</span><h3>Fashion Art Academy</h3></div></div><div class="kp"><div><small>Вложено</small><b>$4 418</b></div><div><small>Заявок</small><b>6 507</b></div><div class="w"><small>Доход</small><b>$14 700</b><em>ROMI 233%</em></div></div><p>Заявка по $0,68, охват больше миллиона человек.</p><button type="button" class="shot" data-imgs="i08.jpg,k08.jpg" data-t="Fashion Art Academy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono" aria-hidden="true">Ш</span><div><span class="meta">Онлайн-школа</span><h3>Школа психологии Анар Кыдыковой</h3></div></div><div class="kp"><div><small>Вложено</small><b>≈ $40 000</b></div><div><small>Выручка к рекламе</small><b>5×</b></div><div class="w"><small>Выручка запусков</small><b>100+ млн ₸</b><em>≈ $200 000+, по данным клиента</em></div></div><p>Реклама в переписки, дальше прогрев и продажи в директе. Видео-отзыв Анар есть ниже.</p></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono" aria-hidden="true">Ш</span><div><span class="meta">Онлайн-школа</span><h3>Школа астрологии</h3></div></div><div class="kp"><div><small>Вложено</small><b>$234 357</b></div><div><small>Объявлений за год</small><b>257</b></div><div class="w"><small>Выручка проекта</small><b>от $3 млн</b><em>по данным клиента</em></div></div><p>Год рекламы на переписки и переходы.</p><button type="button" class="shot" data-imgs="c2.jpg" data-t="Школа астрологии"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l10.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Мастер-класс для врачей</span><h3>Запуск Нигоры Марифовны</h3></div></div><div class="kp"><div><small>Вложено</small><b>$598</b></div><div><small>Продаж</small><b>67</b></div><div class="w"><small>Окупаемость</small><b>×22</b><em>клиент обошёлся примерно в $9</em></div></div><p>1 107 заявок по $0,54. Средний чек $200.</p><button type="button" class="shot" data-imgs="i10.jpg,k10.jpg" data-t="Запуск Нигоры Марифовны"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono s" aria-hidden="true">NDA</span><div><span class="meta">Астрология</span><h3>Проект под NDA</h3></div></div><div class="kp"><div><small>Вложено</small><b>$360 984</b></div><div><small>Заявок</small><b>144 392</b></div><div class="w"><small>Продаж</small><b>24 543</b><em>ROMI 209%</em></div></div><p>Заявка по $2,5, в продажу переходят 17%.</p><button type="button" class="shot" data-imgs="k05.jpg" data-t="Проект под NDA"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono s" aria-hidden="true">NDA</span><div><span class="meta">Онлайн-проект</span><h3>Проект под NDA</h3></div></div><div class="kp"><div><small>Вложено</small><b>$92 847</b></div><div><small>Выручка к рекламе</small><b>≈ 3×</b></div><div class="w"><small>Выручка</small><b>≈ $278 000</b><em>по данным клиента</em></div></div><p>Переписки в мессенджерах по $0,27–0,72.</p><button type="button" class="shot" data-imgs="c4.jpg" data-t="Проект под NDA"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono" aria-hidden="true">Н</span><div><span class="meta">Наставничество для экспертов</span><h3>Наставничество Ильи</h3></div></div><div class="kp"><div><small>Вложено</small><b>$12 714</b></div><div><small>Продано</small><b>500 + 500</b></div><div class="w"><small>Трафик</small><b>окупился 1 : 1</b><em>наставничество — сверху</em></div></div><p>500 стартовых продуктов и 500 мест на офлайн-мероприятия окупили рекламу.</p><button type="button" class="shot" data-imgs="c5.jpg" data-t="Наставничество Ильи"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono" aria-hidden="true">З</span><div><span class="meta">Онлайн-курс</span><h3>Заработок на перезаливе видео</h3></div></div><div class="kp"><div><small>Вложено</small><b>$10 774</b></div><div><small>Продаж</small><b>164</b></div><div class="w"><small>Выручка</small><b>$47 719</b><em>4,4× к рекламе</em></div></div><p>8 006 заявок из WhatsApp и Instagram.</p></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l01.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Онлайн-магазин косметики</span><h3>Comax Uz</h3></div></div><div class="kp"><div><small>Вложено</small><b>$14 434</b></div><div><small>Цена продажи</small><b>$2,75</b></div><div class="w"><small>Чистая прибыль</small><b>$97 130</b><em>ROMI на чистую прибыль 203%</em></div></div><p>Клиент обходится в $7 при среднем чеке $35.</p><button type="button" class="shot" data-imgs="i01.jpg,k01.jpg" data-t="Comax Uz"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l02.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Производство дверей</span><h3>Norma Dveri</h3></div></div><div class="kp"><div><small>Вложено</small><b>$51 402</b></div><div><small>Заявок</small><b>39 776</b></div><div class="w"><small>Договоров</small><b>1 401</b><em>клиент обходится в $37</em></div></div><p>Один договор — от 3 до 50 дверей.</p><button type="button" class="shot" data-imgs="i02.jpg,k02.jpg" data-t="Norma Dveri"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l04.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Микрофинансовая организация</span><h3>Yaxshi Niyat</h3></div></div><div class="kp"><div><small>Вложено</small><b>$17 945</b></div><div><small>Заявок</small><b>42 109</b></div><div class="w"><small>Выдано кредитов</small><b>40+ млрд сум</b><em>за период работы</em></div></div><p>Заявка по $0,43, целевых — 45%.</p><button type="button" class="shot" data-imgs="i04.jpg,k04.jpg" data-t="Yaxshi Niyat"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l03.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Агентство занятости</span><h3>InterWork</h3></div></div><div class="kp"><div><small>Вложено</small><b>$8 754</b></div><div><small>Заявок</small><b>9 417</b></div><div class="w"><small>Цена клиента</small><b>$34 → $15</b><em>до нашей работы и после</em></div></div><p>Заявка в среднем по $0,93.</p><button type="button" class="shot" data-imgs="i03.jpg,k03.jpg" data-t="InterWork"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l06.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Детские товары</span><h3>Tomiko</h3></div></div><div class="kp"><div><small>Вложено</small><b>$17 296</b></div><div><small>Охват</small><b>10 млн</b></div><div class="w"><small>Заказов на маркетплейсе</small><b>17 000+</b><em>+29 802 подписчика</em></div></div><p>Главная задача — узнаваемость бренда.</p><button type="button" class="shot" data-imgs="i06.jpg,k06.jpg" data-t="Tomiko"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l12.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Магазин женской одежды</span><h3>Bespoke</h3></div></div><div class="kp"><div><small>Вложено</small><b>$2 545</b></div><div><small>Заявок</small><b>4 468</b></div><div class="w"><small>Покупок</small><b>900+</b><em>70% заявок — целевые</em></div></div><p>Заявка по $0,57, средний чек $40.</p><button type="button" class="shot" data-imgs="i12.jpg,k12.jpg" data-t="Bespoke"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l14.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Туры в санаторий</span><h3>Naftalan Tour</h3></div></div><div class="kp"><div><small>Вложено</small><b>$2 384</b></div><div><small>Заявок</small><b>1 588</b></div><div class="w"><small>Продано путёвок</small><b>138</b><em>в покупку переходят 8,7%</em></div></div><p>Заявка по $1,47, целевых — 63%.</p><button type="button" class="shot" data-imgs="i14.jpg,k14.jpg" data-t="Naftalan Tour"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l11.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Клиника</span><h3>EMU Clinic</h3></div></div><div class="kp"><div><small>Вложено</small><b>$1 423</b></div><div><small>Заявок</small><b>974</b></div><div class="w"><small>Записей на операцию</small><b>62</b><em>целевых заявок около 55%</em></div></div><p>Заявка по $1,46.</p><button type="button" class="shot" data-imgs="i11.jpg,k11.jpg" data-t="EMU Clinic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><img class="lg" src="media/l13.jpg" alt="" width="54" height="54" loading="lazy"><div><span class="meta">Турфирма</span><h3>Miru Tour</h3></div></div><div class="kp"><div><small>Вложено</small><b>$4 892</b></div><div><small>Заявок</small><b>2 883</b></div><div class="w"><small>Целевых заявок</small><b>55%</b><em>средний чек $500</em></div></div><p>Заявка по $1,69, +6 054 подписчика.</p><button type="button" class="shot" data-imgs="i13.jpg,k13.jpg" data-t="Miru Tour"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-4 4 3 3-2 6 4"/></svg><span>Скриншоты</span></button></div>
+      <div class="card cs rv"><div class="ch"><span class="lg mono" aria-hidden="true">Б</span><div><span class="meta">Услуги для бизнеса</span><h3>Бухгалтерские услуги</h3></div></div><div class="kp"><div><small>Вложено</small><b>$4 426</b></div><div><small>Продаж</small><b>172</b></div><div class="w"><small>Выручка</small><b>$17 093</b><em>3,9× к рекламе</em></div></div><p>Реклама в Instagram, заявки в WhatsApp.</p></div>
+    </div>
+    <div class="ctrack" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="hrow">
+      <div>
+        <span class="kicker">Отзывы</span>
+        <h2 class="rv">Что говорят клиенты</h2>
+      </div>
+      <div class="arrows" data-for="rsnap"><button type="button" data-dir="-1" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" data-dir="1" aria-label="Вперёд"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+    </div>
+    <p class="lead rv">Под каждым видео — главное из отзыва.</p>
+    <div class="snap" id="rsnap">
+      <div class="card rw"><button type="button" class="yt" data-yt="F-h7U-JVHQI" aria-label="Видео-отзыв: Анар Кыдыкова"><img src="media/p06.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Анар Кыдыкова</h3><small>Школа психологии</small><p>Заявка подешевела с $4 до $1. На новых заявках сделала запуск на 50 млн ₸.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="bCILl0vnzys" aria-label="Видео-отзыв: Нигора Марифовна"><img src="media/p15.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Нигора Марифовна</h3><small>Вебинар для врачей</small><p>Набрали качественную аудиторию на вебинар. Продали 53 участникам.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="q0SC_9QqLYg" aria-label="Видео-отзыв: Лобар Жонова"><img src="media/p14.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Лобар Жонова</h3><small>Женский форум</small><p>За несколько дней на новый аккаунт пришло почти 8 тысяч заявок — только через таргет.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="MYuHyFXR0gc" aria-label="Видео-отзыв: Александр Мюллер"><img src="media/p12.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Александр Мюллер</h3><small>Обучение инвестициям</small><p>Ждал, что клиентов сначала будет мало. Заявок пришло столько, что не успевал обрабатывать и попросил сбавить обороты.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="0I9NdZBzHjg" aria-label="Видео-отзыв: Bespoke"><img src="media/p11.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Bespoke</h3><small>Магазин женской одежды</small><p>Работаем почти год. Благодарит за целевую аудиторию и живых клиентов: «вы погружаетесь в сам бизнес».</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="ub8UR10HDzo" aria-label="Видео-отзыв: Comax Uz"><img src="media/p13.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Comax Uz</h3><small>Онлайн-магазин косметики</small><p>До этого работали с тремя подрядчиками — было хуже и непонятно. Здесь проблемы объясняют понятно и вовремя дают отчёты.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="eHswUY95RwI" aria-label="Видео-отзыв: Norma Dveri"><img src="media/p16.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Norma Dveri</h3><small>Производство дверей</small><p>Прежние подрядчики «кормили следующим месяцем» и к обещанным цифрам не подходили. Здесь ценят честность, ответственность и результат.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="FfO6_ii-s6o" aria-label="Видео-отзыв: Леонид"><img src="media/p08.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Леонид</h3><small>Онлайн-проект, с 2019 года</small><p>План — $1 000 в сутки с окупаемостью от ×3. Цена заявки и оплаченного клиента стала ниже, чем до просадки.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="RPbASLIyHWU" aria-label="Видео-отзыв: Тамерлан"><img src="media/p09.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Тамерлан</h3><small>Продюсер экспертов</small><p>Около $10 000 рекламного бюджета в месяц. Окупаемость минимум ×7.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="U7pQQWk8agg" aria-label="Видео-отзыв: Анна"><img src="media/p02.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Анна</h3><small>Блог и обучение по криптовалюте</small><p>За три запуска — больше $50 000. Обычная окупаемость ×4–×5.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="28TN7W8fwf4" aria-label="Видео-отзыв: Артём"><img src="media/p07.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Артём</h3><small>Маркетолог, автоворонки</small><p>Около 20 000 заявок за два месяца. «Лучший таргетолог из всех, что были».</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="koEhnSW88ao" aria-label="Видео-отзыв: Айым"><img src="media/p03.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Айым</h3><small>Психолог</small><p>С мая по сентябрь +1 050 подписчиков. Первый поток — больше 2 млн ₸.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="IdQkOGi4c_M" aria-label="Видео-отзыв: Илья"><img src="media/p05.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Илья</h3><small>Продюсер, воронки и запуски</small><p>Реклама окупалась 1 к 1 на недорогих продуктах, иногда в плюс.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="u591t57y1cc" aria-label="Видео-отзыв: Жанна"><img src="media/p01.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Жанна</h3><small>Нутрициолог</small><p>Стабильный поток заявок в рамках плана. Ни одного дня без трафика.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="ZakFeHLYhuU" aria-label="Видео-отзыв: InterWork"><img src="media/p10.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>InterWork</h3><small>Агентство трудоустройства за рубежом</small><p>Третий месяц работы: выросли конверсия заявок и их качество.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- КОМАНДА -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">Кто ведёт проект</span>
+    <h2 class="rv">Работаем вдвоём</h2>
+    <div class="team">
+      <div class="card rv"><img src="media/t1.jpg" alt="Рафаэль" width="88" height="88" loading="lazy"><div><h3>Рафаэль</h3><div class="soc"><a href="https://www.instagram.com/rafael.traffic/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg><span>Instagram</span></a><a href="https://t.me/+s_EHSe1dEuYyNzMy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 4.5L3.5 11l5.5 2 2 6 3-4 4.5 3.5z"/><path d="M9 13l7-5"/></svg><span>Telegram</span></a><a href="https://www.youtube.com/@rafaelyusupov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5v5l4-2.5z"/></svg><span>YouTube</span></a></div></div></div>
+      <div class="card rv"><img src="media/t2.jpg" alt="Рустам" width="88" height="88" loading="lazy"><div><h3>Рустам</h3><div class="soc"><a href="https://www.instagram.com/s1mple_target/reels/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg><span>Instagram</span></a><a href="https://t.me/s1mple_target" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 4.5L3.5 11l5.5 2 2 6 3-4 4.5 3.5z"/><path d="M9 13l7-5"/></svg><span>Telegram</span></a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- УСЛОВИЯ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="kicker">С кем мы работаем</span>
+    <h2 class="rv">Берём проект, если видим, <span class="dim">как его окупить</span></h2>
+    <div class="fit">
+      <div class="card yes rv"><h3>Нам по пути</h3><ul>
+        <li>Рекламный бюджет от $1 500 в месяц</li>
+        <li>Есть кому обрабатывать заявки</li>
+        <li>Готовы снимать ролики на телефон</li>
+        <li>Покажете цифры по оплатам</li></ul></div>
+      <div class="card no rv"><h3>Не по пути</h3><ul>
+        <li>Нужно «побольше заявок подешевле»</li>
+        <li>Снимать некому</li>
+        <li>Оплаты закрыты от нас</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЗАЯВКА -->
+<section id="start" style="padding-top:0">
+  <div class="wrap start">
+    <div>
+      <span class="kicker">Первый шаг</span>
+      <h2>Покажем, как это будет <span class="dim">в вашем центре</span></h2>
+      <p class="lead">Онлайн-встреча. Без договора и предоплаты.</p>
+      <ol>
+        <li>Покажем систему изнутри: ролики, отчёты, цифры</li>
+        <li>Посчитаем, сколько вам сейчас стоит один ученик</li>
+        <li>Скажем прямо, если не видим, как окупить рекламу</li>
+      </ol>
+    </div>
+    <form id="f" class="card" novalidate>
+      <div class="fhead"><b>Короткий опрос</b><span>3 вопроса · 30 секунд</span></div>
+      <p class="fsub">Ответьте на три вопроса — и мы договоримся о встрече.</p>
+      <div class="prog" id="pr"><i class="on"></i><i></i><i></i></div>
+      <div class="qs on" data-k="niche">
+        <h3>Что у вас?</h3>
+        <button type="button" class="opt">Детский центр</button>
+        <button type="button" class="opt">Языковая школа</button>
+        <button type="button" class="opt">Школа программирования</button>
+        <button type="button" class="opt">Подготовка к поступлению / учёба за рубежом</button>
+        <button type="button" class="opt">Другое в образовании</button>
+      </div>
+      <div class="qs" data-k="budget">
+        <h3>Сколько готовы вкладывать в рекламу в месяц?</h3>
+        <button type="button" class="opt">До $1 500</button>
+        <button type="button" class="opt">$1 500 – $5 000</button>
+        <button type="button" class="opt">Больше $5 000</button>
+        <button type="button" class="back">← Назад</button>
+      </div>
+      <div class="qs">
+        <h3>Куда вам написать?</h3>
+        <div class="pick" id="pick">
+          <button type="button" class="opt sel">Telegram</button>
+          <button type="button" class="opt">WhatsApp</button>
+        </div>
+        <input name="name" placeholder="Ваше имя" autocomplete="name" aria-label="Ваше имя">
+        <input name="phone" type="tel" placeholder="Номер телефона" autocomplete="tel" aria-label="Номер телефона">
+        <input name="company" placeholder="Instagram или сайт центра" aria-label="Instagram или сайт центра">
+        <button class="btn" type="submit">Обсудить проект</button>
+        <p id="msg" role="status"></p>
+        <button type="button" class="back">← Назад</button>
+      </div>
+      <div class="qs">
+        <h3 class="acc">Заявка у нас</h3>
+        <p style="color:var(--soft)">Напишем вам в течение рабочего дня и договоримся о времени.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ВОПРОСЫ -->
+<section style="padding-top:0">
+  <div class="wrap faq">
+    <h2 class="center" style="margin-bottom:30px">Вопросы</h2>
+    <details><summary>У нас уже есть таргетолог</summary>
+      <p>Спросите его: какая реклама за месяц принесла больше всего оплат и сколько стоил один ученик. Есть ответ — ничего не меняйте. В ответ цена заявки — приходите на встречу.</p></details>
+    <details><summary>Реклама на две минуты? Её кто-то смотрит?</summary>
+      <p>Смотрят, если она снята как обычный ролик, а не как реклама. После неё люди помнят, что оставили заявку, и ждут звонка.</p></details>
+    <details><summary>У нас нет оператора и CRM</summary>
+      <p>Ролики снимаются на телефон: что говорить и как держать кадр, расписано в ТЗ. Вместо CRM хватит таблицы: кто оплатил и когда.</p></details>
+    <details><summary>Заявки станут дороже?</summary>
+      <p>Да. Зато учеников станет больше. В школе программирования заявки по $2–3 давали двух подходящих людей из десяти, а по $5–6 — шестерых.</p></details>
+    <details><summary>Вы гарантируете результат?</summary>
+      <p>Обещать число оплат нечестно: оно зависит ещё от продукта, цены и отдела продаж. Обещаем другое: вы всегда видите, сколько потратили и сколько пришло в кассу.</p></details>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fl"><div><b>Рафаэль</b><div class="soc"><a href="https://www.instagram.com/rafael.traffic/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg><span>Instagram</span></a><a href="https://t.me/+s_EHSe1dEuYyNzMy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 4.5L3.5 11l5.5 2 2 6 3-4 4.5 3.5z"/><path d="M9 13l7-5"/></svg><span>Telegram</span></a><a href="https://www.youtube.com/@rafaelyusupov" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="4"/><path d="M10.5 9.5v5l4-2.5z"/></svg><span>YouTube</span></a></div></div><div><b>Рустам</b><div class="soc"><a href="https://www.instagram.com/s1mple_target/reels/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg><span>Instagram</span></a><a href="https://t.me/s1mple_target" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 4.5L3.5 11l5.5 2 2 6 3-4 4.5 3.5z"/><path d="M9 13l7-5"/></svg><span>Telegram</span></a></div></div></div>
+  <p style="margin-top:22px">Сайт не является частью Meta Platforms, Inc. и не связан с ней.</p>
+</div></footer>
+
+<dialog id="lb" aria-label="Скриншоты проекта">
+  <div class="lbh"><h3></h3><button type="button" aria-label="Закрыть"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="lbin"></div>
+</dialog>
+
+
+<script>
+// ===== НАСТРОЙКИ =====
+var ENDPOINT = '';   // адрес, куда отправлять заявки (вебхук CRM или бота). Пока пусто — заявки не уходят.
+var TELEGRAM = '';   // ссылка вида https://t.me/username — тогда кнопка в шапке откроет чат.
+
+(function () {
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+var fmt = function (n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); };
+var clamp = function (v) { return Math.max(0, Math.min(1, v)); };
+
+if (TELEGRAM) $$('[data-tg]').forEach(function (a) { a.href = TELEGRAM; a.target = '_blank'; a.rel = 'noopener'; });
+
+// мягкая подсветка карточек под курсором
+$$('.card').forEach(function (c) {
+  c.addEventListener('pointermove', function (e) {
+    var r = c.getBoundingClientRect();
+    c.style.setProperty('--x', e.clientX - r.left + 'px'); c.style.setProperty('--y', e.clientY - r.top + 'px');
+  });
+});
+
+// точки «из десяти»
+$$('.dots').forEach(function (d) { d.innerHTML = new Array(11).join('<i></i>'); });
+
+// манифест проявляется по словам при прокрутке
+var man = $('#manifest'), accWords = (man.dataset.acc || '').split(' ');
+man.innerHTML = man.textContent.trim().split(/\s+/).map(function (w) {
+  return '<span class="w' + (accWords.indexOf(w) > -1 ? ' g' : '') + '">' + w + '</span>';
+}).join(' ');
+var words = $$('.w', man), nav = $('#nav'), tick = false;
+function onScroll() {
+  tick = false;
+  nav.classList.toggle('sc', scrollY > 8);
+  var vh = innerHeight, r = man.getBoundingClientRect();
+  var n = Math.round(clamp((vh * .85 - r.top) / (vh * .5 + r.height * .6)) * words.length);
+  words.forEach(function (w, i) { w.classList.toggle('on', i < n); });
+}
+addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
+addEventListener('resize', onScroll); onScroll();
+
+function countUp(el) {
+  var to = +el.dataset.n, p = el.dataset.p || '', t0 = performance.now();
+  (function step(t) {
+    var k = Math.min((t - t0) / 1700, 1), e = 1 - Math.pow(1 - k, 4);
+    el.textContent = p + fmt(to * e);
+    if (k < 1) requestAnimationFrame(step);
+  })(t0);
+}
+var io = new IntersectionObserver(function (es) {
+  es.forEach(function (e) {
+    if (!e.isIntersecting) return;
+    var el = e.target; io.unobserve(el);
+    if (el.dataset.n) { countUp(el); return; }
+    el.classList.add('in');
+    if (el.id === 'board') { $$('[data-n]', el).forEach(countUp); $$('u', el).forEach(function (u, i) { setTimeout(function () { u.style.width = u.dataset.w + '%'; }, 250 + i * 110); }); }
+    if (el.id === 'feat') $$('[data-h]', el).forEach(function (b, i) { setTimeout(function () { b.style.height = b.dataset.h + '%'; }, 200 + (i >> 1) * 70); });
+    if (el.id === 'two') $$('.dots', el).forEach(function (d, r) { $$('i', d).slice(0, +d.dataset.on).forEach(function (m, i) { setTimeout(function () { m.classList.add('on'); }, 250 + r * 500 + i * 150); }); });
+  });
+}, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+$$('.rv').forEach(function (el) {
+  var sib = [].filter.call(el.parentNode.children, function (c) { return c.classList.contains('rv'); });
+  el.style.transitionDelay = Math.min(sib.indexOf(el), 3) * 70 + 'ms'; io.observe(el);
+});
+['#two', '#report'].forEach(function (s) { io.observe($(s)); });
+$$('.bento3 [data-n]').forEach(function (e) { io.observe(e); });
+
+var rs = $('#rsnap');
+$$('.arrows').forEach(function (a) {
+  var el = document.getElementById(a.dataset.for), bs = $$('button', a);
+  if (!el) return;
+  function upd() {
+    var max = el.scrollWidth - el.clientWidth, t = $('.ctrack i');
+    bs[0].disabled = el.scrollLeft < 4; bs[1].disabled = el.scrollLeft > max - 4;
+    if (t && el.id === 'casegrid') {
+      var w = Math.max(el.clientWidth / el.scrollWidth * 100, 10);
+      t.style.width = w + '%'; t.style.marginLeft = (max > 0 ? el.scrollLeft / max : 0) * (100 - w) + '%';
+    }
+  }
+  bs.forEach(function (b) { b.addEventListener('click', function () {
+    var step = el.children[1].offsetLeft - el.children[0].offsetLeft;
+    el.scrollTo({ left: (Math.round(el.scrollLeft / step) + +b.dataset.dir) * step, behavior: 'smooth' });
+  }); });
+  el.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
+});
+// отзывы: по нажатию на обложку включается ролик с YouTube, предыдущий выключается
+$$('.yt').forEach(function (b) {
+  b.addEventListener('click', function () {
+    $$('.rw iframe').forEach(function (f) { f.previousElementSibling.hidden = false; f.remove(); });
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
+    f.title = b.getAttribute('aria-label');
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    b.hidden = true;
+    b.after(f);
+  });
+});
+
+var lb = $('#lb');
+$$('.shot').forEach(function (b) {
+  b.addEventListener('click', function () {
+    $('h3', lb).textContent = b.dataset.t;
+    $('.lbin', lb).innerHTML = b.dataset.imgs.split(',').map(function (f) {
+      return '<img' + (f.charAt(0) === 'i' ? ' class="pf"' : '') + ' src="media/' + f + '" alt="Скриншот проекта">';
+    }).join('');
+    lb.showModal();
+  });
+});
+$('.lbh button', lb).addEventListener('click', function () { lb.close(); });
+lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+
+// заявка в три шага
+var steps = $$('.qs'), bars = $$('#pr i'), cur = 0, data = { messenger: 'Telegram' };
+function go(i) { steps[cur].classList.remove('on'); cur = i; steps[cur].classList.add('on'); bars.forEach(function (b, k) { b.classList.toggle('on', k <= cur); }); }
+$$('.qs[data-k] .opt').forEach(function (b) { b.addEventListener('click', function () { data[b.parentNode.dataset.k] = b.textContent; go(cur + 1); }); });
+$$('#pick .opt').forEach(function (b) { b.addEventListener('click', function () { $$('#pick .opt').forEach(function (x) { x.classList.toggle('sel', x === b); }); data.messenger = b.textContent; }); });
+$$('.back').forEach(function (b) { b.addEventListener('click', function () { go(cur - 1); }); });
+$('#f').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, msg = $('#msg');
+  if (!f.name.value.trim() || f.phone.value.replace(/\D/g, '').length < 9) { msg.textContent = 'Напишите имя и номер телефона — иначе мы не сможем с вами связаться.'; return; }
+  data.name = f.name.value.trim(); data.phone = f.phone.value.trim(); data.company = f.company.value.trim();
+  if (!ENDPOINT) { msg.textContent = 'Приём заявок ещё не подключён: заявка не отправлена.'; return; }
+  msg.textContent = 'Отправляем…';
+  fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+    .then(function (r) { if (!r.ok) throw 0; go(3); })
+    .catch(function () { msg.textContent = 'Не получилось отправить. Попробуйте ещё раз.'; });
+});
+})();
+</script>
+</body>
+</html>
