@@ -173,11 +173,17 @@ nav a:hover{background:rgba(255,255,255,.16)}
 .snap::-webkit-scrollbar{display:none}
 .snap>*{flex:0 0 min(78vw,300px);scroll-snap-align:start}
 .rw{padding:14px}
-.rw video{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;background:#000}
+.rw .yt,.rw iframe{display:block;width:100%;aspect-ratio:1;border-radius:14px;background:#000;border:0;padding:0}
+.rw .yt{position:relative;overflow:hidden;cursor:pointer}
+.rw .yt[hidden]{display:none}
+.rw .yt img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.rw .yt:hover img{transform:scale(1.03)}
+.rw .pl{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.rw .pl svg{display:block;width:26px;height:26px;fill:#060707}
 .rw h3{font-size:19px;margin-top:16px}
 .rw small{display:block;font-size:13px;color:var(--mute);margin-top:4px}
 .rw p{font-size:15px;color:var(--soft);margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
-.rw>*:not(video){padding-left:8px;padding-right:8px}
+.rw>*:not(.yt):not(iframe){padding-left:8px;padding-right:8px}
 .rw p{margin-left:8px;margin-right:8px;padding-left:0!important;padding-right:0!important;padding-bottom:8px}
 .hrow{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
 .arrows{display:flex;gap:8px;flex:none;margin-bottom:18px}
@@ -549,21 +555,21 @@ form .qs p[style]{color:#12301f!important}
     </div>
     <p class="lead rv">Под каждым видео — главное из отзыва.</p>
     <div class="snap" id="rsnap">
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p06.jpg" src="media/r06.mp4" aria-label="Видео-отзыв: Анар Кыдыкова"></video><h3>Анар Кыдыкова</h3><small>Школа психологии</small><p>Заявка подешевела с $4 до $1. На новых заявках сделала запуск на 50 млн ₸.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p15.jpg" src="media/r15.mp4" aria-label="Видео-отзыв: Нигора Марифовна"></video><h3>Нигора Марифовна</h3><small>Вебинар для врачей</small><p>Набрали качественную аудиторию на вебинар. Продали 53 участникам.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p14.jpg" src="media/r14.mp4" aria-label="Видео-отзыв: Лобар Жонова"></video><h3>Лобар Жонова</h3><small>Женский форум</small><p>За несколько дней на новый аккаунт пришло почти 8 тысяч заявок — только через таргет.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p12.jpg" src="media/r12.mp4" aria-label="Видео-отзыв: Александр Мюллер"></video><h3>Александр Мюллер</h3><small>Обучение инвестициям</small><p>Ждал, что клиентов сначала будет мало. Заявок пришло столько, что не успевал обрабатывать и попросил сбавить обороты.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p11.jpg" src="media/r11.mp4" aria-label="Видео-отзыв: Bespoke"></video><h3>Bespoke</h3><small>Магазин женской одежды</small><p>Работаем почти год. Благодарит за целевую аудиторию и живых клиентов: «вы погружаетесь в сам бизнес».</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p13.jpg" src="media/r13.mp4" aria-label="Видео-отзыв: Comax Uz"></video><h3>Comax Uz</h3><small>Онлайн-магазин косметики</small><p>До этого работали с тремя подрядчиками — было хуже и непонятно. Здесь проблемы объясняют понятно и вовремя дают отчёты.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p16.jpg" src="media/r16.mp4" aria-label="Видео-отзыв: Norma Dveri"></video><h3>Norma Dveri</h3><small>Производство дверей</small><p>Прежние подрядчики «кормили следующим месяцем» и к обещанным цифрам не подходили. Здесь ценят честность, ответственность и результат.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p08.jpg" src="media/r08.mp4" aria-label="Видео-отзыв: Леонид"></video><h3>Леонид</h3><small>Онлайн-проект, с 2019 года</small><p>План — $1 000 в сутки с окупаемостью от ×3. Цена заявки и оплаченного клиента стала ниже, чем до просадки.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p09.jpg" src="media/r09.mp4" aria-label="Видео-отзыв: Тамерлан"></video><h3>Тамерлан</h3><small>Продюсер экспертов</small><p>Около $10 000 рекламного бюджета в месяц. Окупаемость минимум ×7.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p02.jpg" src="media/r02.mp4" aria-label="Видео-отзыв: Анна"></video><h3>Анна</h3><small>Блог и обучение по криптовалюте</small><p>За три запуска — больше $50 000. Обычная окупаемость ×4–×5.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p07.jpg" src="media/r07.mp4" aria-label="Видео-отзыв: Артём"></video><h3>Артём</h3><small>Маркетолог, автоворонки</small><p>Около 20 000 заявок за два месяца. «Лучший таргетолог из всех, что были».</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p03.jpg" src="media/r03.mp4" aria-label="Видео-отзыв: Айым"></video><h3>Айым</h3><small>Психолог</small><p>С мая по сентябрь +1 050 подписчиков. Первый поток — больше 2 млн ₸.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p05.jpg" src="media/r05.mp4" aria-label="Видео-отзыв: Илья"></video><h3>Илья</h3><small>Продюсер, воронки и запуски</small><p>Реклама окупалась 1 к 1 на недорогих продуктах, иногда в плюс.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p01.jpg" src="media/r01.mp4" aria-label="Видео-отзыв: Жанна"></video><h3>Жанна</h3><small>Нутрициолог</small><p>Стабильный поток заявок в рамках плана. Ни одного дня без трафика.</p></div>
-      <div class="card rw"><video controls playsinline preload="none" poster="media/p10.jpg" src="media/r10.mp4" aria-label="Видео-отзыв: InterWork"></video><h3>InterWork</h3><small>Агентство трудоустройства за рубежом</small><p>Третий месяц работы: выросли конверсия заявок и их качество.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="F-h7U-JVHQI" aria-label="Видео-отзыв: Анар Кыдыкова"><img src="media/p06.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Анар Кыдыкова</h3><small>Школа психологии</small><p>Заявка подешевела с $4 до $1. На новых заявках сделала запуск на 50 млн ₸.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="bCILl0vnzys" aria-label="Видео-отзыв: Нигора Марифовна"><img src="media/p15.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Нигора Марифовна</h3><small>Вебинар для врачей</small><p>Набрали качественную аудиторию на вебинар. Продали 53 участникам.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="q0SC_9QqLYg" aria-label="Видео-отзыв: Лобар Жонова"><img src="media/p14.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Лобар Жонова</h3><small>Женский форум</small><p>За несколько дней на новый аккаунт пришло почти 8 тысяч заявок — только через таргет.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="MYuHyFXR0gc" aria-label="Видео-отзыв: Александр Мюллер"><img src="media/p12.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Александр Мюллер</h3><small>Обучение инвестициям</small><p>Ждал, что клиентов сначала будет мало. Заявок пришло столько, что не успевал обрабатывать и попросил сбавить обороты.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="0I9NdZBzHjg" aria-label="Видео-отзыв: Bespoke"><img src="media/p11.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Bespoke</h3><small>Магазин женской одежды</small><p>Работаем почти год. Благодарит за целевую аудиторию и живых клиентов: «вы погружаетесь в сам бизнес».</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="ub8UR10HDzo" aria-label="Видео-отзыв: Comax Uz"><img src="media/p13.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Comax Uz</h3><small>Онлайн-магазин косметики</small><p>До этого работали с тремя подрядчиками — было хуже и непонятно. Здесь проблемы объясняют понятно и вовремя дают отчёты.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="eHswUY95RwI" aria-label="Видео-отзыв: Norma Dveri"><img src="media/p16.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Norma Dveri</h3><small>Производство дверей</small><p>Прежние подрядчики «кормили следующим месяцем» и к обещанным цифрам не подходили. Здесь ценят честность, ответственность и результат.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="FfO6_ii-s6o" aria-label="Видео-отзыв: Леонид"><img src="media/p08.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Леонид</h3><small>Онлайн-проект, с 2019 года</small><p>План — $1 000 в сутки с окупаемостью от ×3. Цена заявки и оплаченного клиента стала ниже, чем до просадки.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="RPbASLIyHWU" aria-label="Видео-отзыв: Тамерлан"><img src="media/p09.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Тамерлан</h3><small>Продюсер экспертов</small><p>Около $10 000 рекламного бюджета в месяц. Окупаемость минимум ×7.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="U7pQQWk8agg" aria-label="Видео-отзыв: Анна"><img src="media/p02.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Анна</h3><small>Блог и обучение по криптовалюте</small><p>За три запуска — больше $50 000. Обычная окупаемость ×4–×5.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="28TN7W8fwf4" aria-label="Видео-отзыв: Артём"><img src="media/p07.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Артём</h3><small>Маркетолог, автоворонки</small><p>Около 20 000 заявок за два месяца. «Лучший таргетолог из всех, что были».</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="koEhnSW88ao" aria-label="Видео-отзыв: Айым"><img src="media/p03.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Айым</h3><small>Психолог</small><p>С мая по сентябрь +1 050 подписчиков. Первый поток — больше 2 млн ₸.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="IdQkOGi4c_M" aria-label="Видео-отзыв: Илья"><img src="media/p05.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Илья</h3><small>Продюсер, воронки и запуски</small><p>Реклама окупалась 1 к 1 на недорогих продуктах, иногда в плюс.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="u591t57y1cc" aria-label="Видео-отзыв: Жанна"><img src="media/p01.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>Жанна</h3><small>Нутрициолог</small><p>Стабильный поток заявок в рамках плана. Ни одного дня без трафика.</p></div>
+      <div class="card rw"><button type="button" class="yt" data-yt="ZakFeHLYhuU" aria-label="Видео-отзыв: InterWork"><img src="media/p10.jpg" alt="" loading="lazy"><span class="pl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span></button><h3>InterWork</h3><small>Агентство трудоустройства за рубежом</small><p>Третий месяц работы: выросли конверсия заявок и их качество.</p></div>
     </div>
   </div>
 </section>
@@ -764,8 +770,19 @@ $$('.arrows').forEach(function (a) {
   }); });
   el.addEventListener('scroll', upd, { passive: true }); addEventListener('resize', upd); upd();
 });
-var vids = $$('video', rs);
-vids.forEach(function (v) { v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v) o.pause(); }); }); });
+// отзывы: по нажатию на обложку включается ролик с YouTube, предыдущий выключается
+$$('.yt').forEach(function (b) {
+  b.addEventListener('click', function () {
+    $$('.rw iframe').forEach(function (f) { f.previousElementSibling.hidden = false; f.remove(); });
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0&playsinline=1';
+    f.title = b.getAttribute('aria-label');
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    b.hidden = true;
+    b.after(f);
+  });
+});
 
 var lb = $('#lb');
 $$('.shot').forEach(function (b) {
